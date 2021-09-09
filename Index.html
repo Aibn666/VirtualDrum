@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+    <head>
+        <title>Bateria Virtual</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class = "keys">
+        <button id="clap">
+            <div data-key="65" class="key">
+            <kbd>A</kabd>
+            <span class="sound">clap</span>
+            </div>
+        </button>
+        <button id="kick">
+            <div data-key="67" class="key">
+            <kbd>C</kabd>
+            <span class="sound">kick</span>
+            </div>
+        </button>
+        <button id="hihat">
+            <div data-key="83" class="key">
+            <kbd>S</kabd>
+            <span class="sound">hihat</span>
+            </div>
+        </button>
+        <button id="snare">
+            <div data-key="68" class="key">
+            <kbd>D</kabd>
+            <span class="sound">snare</span>
+            </div>
+        </button>
+        </div>
+
+        <audio data-key="65" src="sounds/clap.mp3"></audio>
+        <audio data-key="67" src="sounds/kick.wav"></audio>
+        <audio data-key="83" src="sounds/hihat.wav"></audio>
+        <audio data-key="68" src="sounds/snare.wav"></audio>
+
+    <script>
+        function clap(){
+            const audio = document.querySelector(`audio[data-key="65"]`);
+            document.querySelector(`audio[data-key="65"]`);
+            if(!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+        }
+        document.getElementById("clap").onclick = function(){
+            clap();
+        }
+            function kick(){
+            const audio = document.querySelector(`audio[data-key="67"]`);
+            document.querySelector(`audio[data-key="67"]`);
+            if(!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+        }
+        document.getElementById("kick").onclick = function(){
+            kick();
+        }
+            function hihat(){
+            const audio = document.querySelector(`audio[data-key="83"]`);
+            document.querySelector(`audio[data-key="83"]`);
+            if(!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+        }
+        document.getElementById("hihat").onclick = function(){
+            hihat();
+        }
+            function snare(){
+            const audio = document.querySelector(`audio[data-key="68"]`);
+            document.querySelector(`audio[data-key="68"]`);
+            if(!audio) return;
+            audio.currentTime = 0;
+            audio.play();
+        }
+        document.getElementById("snare").onclick = function(){
+            snare();
+        }
+        window.addEventListener('keydown',function(e){
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+            if(!audio) return; // stop the function from all together
+            audio.currentTime = 0; //rewind to the start
+            audio.play();
+            console.log(key);
+        });
+    </script>
+    </body>
+</html>
