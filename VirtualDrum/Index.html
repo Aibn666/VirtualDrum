@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+    <head>
+        <title>Bateria Virtual</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class = "keys">
+            <div data-key="65" class="key">
+            <kbd>A</kabd>
+            <span class="sound">clap</span>
+            </div>
+            <div data-key="67" class="key">
+            <kbd>C</kabd>
+            <span class="sound">kick</span>
+            </div>
+            <div data-key="83" class="key">
+            <kbd>S</kabd>
+            <span class="sound">hihat</span>
+            </div>
+            <div data-key="68" class="key">
+            <kbd>D</kabd>
+            <span class="sound">snare</span>
+            </div>
+        </div>
+
+        <audio data-key="65" src="sounds/clap.mp3"></audio>
+        <audio data-key="67" src="sounds/kick.wav"></audio>
+        <audio data-key="83" src="sounds/hihat.wav"></audio>
+        <audio data-key="68" src="sounds/snare.wav"></audio>
+
+    <script>
+        window.addEventListener('keydown',function(e){
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+            if(!audio) return; // stop the function from all together
+            audio.currentTime = 0; //rewind to the start
+            audio.play();
+            console.log(key);
+        });
+    </script>
+    </body>
+</html>
