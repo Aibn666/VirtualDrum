@@ -1,55 +1,32 @@
 <!DOCTYPE html>
+<html lang="es">
     <head>
-        <title>BateriaVirtual</title>
+        <title>DrumKit</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Virtual Drum</h1>
-        <nav>
-            <button id="barra"><b>Inicio</b></button>
-        </nav>
-        <section>
-            <main>
-                <div class="flex-container">
-                    <div class="flex-item"><button data-key="81" class="key" id="clap"><b>Q</b></button></div>
-                    <div class="flex-item"><button data-key="87" class="key" id="clap"><b>W</b></button></div>
-                    <div class="flex-item"><button data-key="69" class="key" id="clap"><b>E</b></button></div>
-                    <div class="flex-item"><button data-key="65" class="key" id="kick"><b>A</b></button></div>
-                    <div class="flex-item"><button data-key="83" class="key" id="kick"><b>S</b></button></div>
-                    <div class="flex-item"><button data-key="68" class="key" id="kick"><b>D</b></button></div>
-                    <div class="flex-item"><button data-key="90" class="key"><b>Z</b></button></div>
-                    <div class="flex-item"><button data-key="88" class="key"><b>X</b></button></div>
-                    <div class="flex-item"><button data-key="67" class="key"><b>C</b></button></div>
-                </div>
-            </main>
-        </section>
+        <div class="drumkit">
+            <div class="pad" id="ch"><div data-key="65" class="key">a</div></div>
+            <div class="pad" id="crash"><div data-key="83" class="key">s</div></div>
+            <div class="pad" id="oh"><div data-key="68" class="key">d</div></div>
+            <div class="pad" id="snare"><div data-key="90" class="key">z</div></div>
+            <div class="pad" id="tom"><div data-key="88" class="key">x</div></div>
+            <div class="pad" id="kick"><div data-key="67" class="key">c</div></div>
+        </div>
 
-        <audio data-key="81" src="sounds/clap.mp3"></audio>
-        <audio data-key="87" src="sounds/kick.wav"></audio>
-        <audio data-key="69" src="sounds/hihat.wav"></audio>
-        <audio data-key="65" src="sounds/snare.wav"></audio>
-        <audio data-key="83" src="sounds/snare.wav"></audio>
-        <audio data-key="68" src="sounds/clap.mp3"></audio>
-        <audio data-key="90" src="sounds/clap.mp3"></audio>
-        <audio data-key="88" src="sounds/clap.mp3"></audio>
-        <audio data-key="67" src="sounds/clap.mp3"></audio>
-
+        <audio data-key="65" src="sounds/Ch.wav"></audio>
+        <audio data-key="83" src="sounds/Crash.wav"></audio>
+        <audio data-key="68" src="sounds/Oh.wav"></audio>
+        <audio data-key="90" src="sounds/Snare.wav"></audio>
+        <audio data-key="88" src="sounds/Tom.wav"></audio>
+        <audio data-key="67" src="sounds/Kick.wav"></audio>
 
         <script>
-            function clap(){
-                const audio = document.querySelector(`audio[data-key="81"]`);
-                document.querySelector(`audio[data-key="81"]`);
-                if(!audio) return;
-                audio.currentTime = 0;
-                audio.play();
-            }
-            document.getElementById("clap").onclick = function(){
-                clap();
-            }
-
             function kick(){
-                const audio = document.querySelector(`audio[data-key="65"]`);
-                document.querySelector(`audio[data-key="65"]`);
+                const audio = document.querySelector(`audio[data-key="67"]`);
+                document.querySelector(`audio[data-key="67"]`);
                 if(!audio) return;
                 audio.currentTime = 0;
                 audio.play();
@@ -58,28 +35,78 @@
                 kick();
             }
 
+            function ch(){
+                const audio = document.querySelector(`audio[data-key="65"]`);
+                document.querySelector(`audio[data-key="65"]`);
+                if(!audio) return;
+                audio.currentTime = 0;
+                audio.play();
+            }
+            document.getElementById("ch").onclick = function(){
+                ch();
+            }
+
+            function crash(){
+                const audio = document.querySelector(`audio[data-key="83"]`);
+                document.querySelector(`audio[data-key="83"]`);
+                if(!audio) return;
+                audio.currentTime = 0;
+                audio.play();
+            }
+            document.getElementById("crash").onclick = function(){
+                crash();
+            }
+
+            function oh(){
+                const audio = document.querySelector(`audio[data-key="68"]`);
+                document.querySelector(`audio[data-key="68"]`);
+                if(!audio) return;
+                audio.currentTime = 0;
+                audio.play();
+            }
+            document.getElementById("oh").onclick = function(){
+                oh();
+            }
+
+            function snare(){
+                const audio = document.querySelector(`audio[data-key="90"]`);
+                document.querySelector(`audio[data-key="90"]`);
+                if(!audio) return;
+                audio.currentTime = 0;
+                audio.play();
+            }
+            document.getElementById("snare").onclick = function(){
+                snare();
+            }
+
+            function tom(){
+                const audio = document.querySelector(`audio[data-key="88"]`);
+                document.querySelector(`audio[data-key="88"]`);
+                if(!audio) return;
+                audio.currentTime = 0;
+                audio.play();
+            }
+            document.getElementById("tom").onclick = function(){
+                tom();
+            }
+
+
+
 
             function playSound(e){
-                const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-                const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-                if(!audio) return; // stop the function from all together
+            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+            if(!audio) return; // stop the function from all together
                 audio.currentTime = 0; //rewind to the start
                 audio.play();
-                key.classList.add('playing');
             }
 
-            function removeTransition(e){
-                if (e.propertyName !== 'transform') return;
-                this.classList.remove('playing');
-            }
 
             const keys = document.querySelectorAll('.key');
-            keys.forEach(key => key.addEventListener('transitionEnd', removeTransition));
-            
+
             window.addEventListener('keydown', playSound);
+
         </script>
+        
     </body>
-
-
-
 </html>
