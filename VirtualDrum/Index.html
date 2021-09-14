@@ -1,112 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <title>DrumKit</title>
+        <title>Paginita</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <div class="drumkit">
-            <div class="pad" id="ch"><div data-key="65" class="key">a</div></div>
-            <div class="pad" id="crash"><div data-key="83" class="key">s</div></div>
-            <div class="pad" id="oh"><div data-key="68" class="key">d</div></div>
-            <div class="pad" id="snare"><div data-key="90" class="key">z</div></div>
-            <div class="pad" id="tom"><div data-key="88" class="key">x</div></div>
-            <div class="pad" id="kick"><div data-key="67" class="key">c</div></div>
-        </div>
-
-        <audio data-key="65" src="sounds/Ch.wav"></audio>
-        <audio data-key="83" src="sounds/Crash.wav"></audio>
-        <audio data-key="68" src="sounds/Oh.wav"></audio>
-        <audio data-key="90" src="sounds/Snare.wav"></audio>
-        <audio data-key="88" src="sounds/Tom.wav"></audio>
-        <audio data-key="67" src="sounds/Kick.wav"></audio>
-
-        <script>
-            function kick(){
-                const audio = document.querySelector(`audio[data-key="67"]`);
-                document.querySelector(`audio[data-key="67"]`);
-                if(!audio) return;
-                audio.currentTime = 0;
-                audio.play();
-            }
-            document.getElementById("kick").onclick = function(){
-                kick();
-            }
-
-            function ch(){
-                const audio = document.querySelector(`audio[data-key="65"]`);
-                document.querySelector(`audio[data-key="65"]`);
-                if(!audio) return;
-                audio.currentTime = 0;
-                audio.play();
-            }
-            document.getElementById("ch").onclick = function(){
-                ch();
-            }
-
-            function crash(){
-                const audio = document.querySelector(`audio[data-key="83"]`);
-                document.querySelector(`audio[data-key="83"]`);
-                if(!audio) return;
-                audio.currentTime = 0;
-                audio.play();
-            }
-            document.getElementById("crash").onclick = function(){
-                crash();
-            }
-
-            function oh(){
-                const audio = document.querySelector(`audio[data-key="68"]`);
-                document.querySelector(`audio[data-key="68"]`);
-                if(!audio) return;
-                audio.currentTime = 0;
-                audio.play();
-            }
-            document.getElementById("oh").onclick = function(){
-                oh();
-            }
-
-            function snare(){
-                const audio = document.querySelector(`audio[data-key="90"]`);
-                document.querySelector(`audio[data-key="90"]`);
-                if(!audio) return;
-                audio.currentTime = 0;
-                audio.play();
-            }
-            document.getElementById("snare").onclick = function(){
-                snare();
-            }
-
-            function tom(){
-                const audio = document.querySelector(`audio[data-key="88"]`);
-                document.querySelector(`audio[data-key="88"]`);
-                if(!audio) return;
-                audio.currentTime = 0;
-                audio.play();
-            }
-            document.getElementById("tom").onclick = function(){
-                tom();
-            }
-
-
-
-
-            function playSound(e){
-            const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-            const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-            if(!audio) return; // stop the function from all together
-                audio.currentTime = 0; //rewind to the start
-                audio.play();
-            }
-
-
-            const keys = document.querySelectorAll('.key');
-
-            window.addEventListener('keydown', playSound);
-
-        </script>
-        
+        <h1>DrumKit</h1>
+        <button id="drum"><a href="Drum.html">Drum</a></button>
+        <h1>Keys</h1>
+        <button id="keys"><a href="Keys.html">Keys</a></button>
     </body>
 </html>
