@@ -1,0 +1,29 @@
+* {
+    background-color: black;
+}
+
+.play {
+    margin: 5%;
+    text-align: center;
+    color: whitesmoke;
+    border:1px solid whitesmoke;
+}
+.box1 {
+    margin: 5%;
+    border: 1px solid whitesmoke;
+}
+
+.box2 {
+    justify-content: center;
+    text-align: center;
+    font-size: 500%;
+    margin: 15%;
+    color: whitesmoke;
+}
+.box3 {
+    justify-content: center;
+    text-align: center;
+    font-size: 500%;
+    margin: 15%;
+    color: whitesmoke;
+}
