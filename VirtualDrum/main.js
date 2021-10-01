@@ -11,38 +11,30 @@ let count = 0;
 let encendido = false;
 let bpm = 240;
 
+
 function cambiaNumero(){
-    intervaloId = setInterval(cambiaTexto, 60000/bpm);
+    intervaloId = setInterval(cambiaColor, 60000/bpm);
 }
 
-function cambiaTexto(){
+function cambiaColor(){
     count++;
-    if(count == 1){
-        if(!crash)return;
-        crash.currentTime = 0; 
-        crash.play();
-    }
-    if(count > 1){
-        if(!Ch)return;
-        Ch.currentTime = 0;
-        Ch.play();
-    }
-
-    if(count >8){
+    if(count > 8) {
         count = 1;
-        crash.play();
     }
-    if(count == 1 || count == 5 || count == 6){
-        if(!kick) return;
+    let step = count.toString();
+    let celda = document.querySelector(`.step input:nth-child(${step})`);
+    let celda2 = document.querySelector(`.step2 input:nth-child(${step})`);
+    if(celda.checked){
+        if(!kick)return;
         kick.currentTime = 0;
         kick.play();
     }
-    if(count == 3 || count == 7){
+    if(celda2.checked){
         if(!Snare)return;
         Snare.currentTime = 0;
         Snare.play();
     }
-    tiempoEnPantalla.textContent = count;
+    tiempoEnPantalla.textContent = count;  
 }
 
 playStop.addEventListener('click', () =>{
@@ -55,5 +47,8 @@ playStop.addEventListener('click', () =>{
         encendido = false;
         playStop.textContent = 'Play';
         clearInterval(intervaloId);
+        count = 0;
+        tiempoEnPantalla.textContent = count;
     }
-})
+});
+
