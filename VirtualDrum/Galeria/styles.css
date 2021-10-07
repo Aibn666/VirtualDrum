@@ -3,7 +3,7 @@ html{
     background: burlywood;
     font-family: 'helvetica neue';
     font-size: 10px;
-    font-weight: 200;
+    font-weight: 100;
 }
 
 body{
@@ -20,8 +20,8 @@ a{
 }
 
 .panels{
-    min-height: 75vh;
-    overflow: hidden;
+    min-height: 100vh;
+    overflow: auto;
     display: flex;
 }
 
