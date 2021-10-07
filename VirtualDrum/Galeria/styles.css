@@ -3,7 +3,7 @@ html{
     background: burlywood;
     font-family: 'helvetica neue';
     font-size: 10px;
-    font-weight: 100;
+    font-weight: 50;
 }
 
 body{
@@ -11,7 +11,7 @@ body{
 }
 
 *, *:before, *:after{
-    box-sizing: inherit;
+    box-sizing: visible;
 }
 a{
     cursor: pointer;
@@ -21,7 +21,7 @@ a{
 
 .panels{
     min-height: 100vh;
-    overflow: inherit;
+    overflow: hidden;
     display: flex;
 }
 
@@ -85,7 +85,7 @@ a{
 
 .panel.open {
     flex: 3;
-    font-size: 2em;
+    font-size: 4em;
 }
 
 
