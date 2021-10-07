@@ -1,0 +1,85 @@
+* {
+    background-color: black;
+}
+ul {
+    background-color: rgb(66, 65, 65);
+    margin: 10px 1px 10px 1px ;
+    border-radius: 4px;
+    padding-left: 3px;
+}
+p {
+    background-color: rgb(66, 65, 65);
+}
+.columna1, .columna2, .columna3, .columna4 {
+    background-color: rgb(66, 65, 65);
+}
+
+.columna1.open, .columna2.open, .columna3.open, .columna4.open {
+    background-color: rgb(64, 194, 32);
+    filter: drop-shadow(0px 0px 20px rgb(90, 255, 14));
+    border-radius: 10px;
+}
+
+.controls {
+    display: flex;
+    border: 5px solid rgb(26, 25, 25);
+    border-radius: 4px;
+    background-color: rgb(66, 65, 65);
+}
+.play{
+    margin-left: 50px;
+    display: flex;
+    background-color: rgb(66, 65, 65);
+    border: 3px groove black;
+    border-radius: 4px;
+    height: 30px;
+    width: 40px;   
+    justify-content: center; 
+    align-items: center;
+    cursor: pointer;
+}
+.contador{
+    background-color: rgb(66, 65, 65);
+    display: flex;
+    border: 1px solid black;
+    border-radius: 4px;
+    border: 3px groove black;
+    height: 30px;
+    width: 60px;   
+    justify-content: center; 
+    align-items: center;
+    cursor: pointer;
+    
+}
+.pads1{
+    display: flex;
+    flex-direction: row;
+    border: 5px solid rgb(26, 25, 25);
+    border-radius: 4px;
+    background-color: rgb(66, 65, 65);
+}
+.nota {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(66, 65, 65) ;
+    margin: 15px 1px 0px 1px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.pad {
+    display: flex;
+    background-color: rgb(63, 59, 59) ;
+    border: 3px groove rgb(26, 25, 25);
+    border-radius: 4px;
+    margin: 10px 3px 10px 3px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+
+}
+.pad.open {
+    background:radial-gradient(aqua,rgb(233, 165, 63) ,rgb(46, 12, 46));
+    filter: drop-shadow(0px 0px 20px rgb(90, 255, 14));
+}
