@@ -18,6 +18,9 @@ a{
     text-decoration: none;
     color: rgb(31, 224, 31);
 }
+a:hover{
+    color: rgba(255, 2, 242, 0.747);
+}
 
 .panels{
     min-height: 100vh;
@@ -26,8 +29,9 @@ a{
 }
 
 .panel{
-    box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
-    color: whitesmoke;
+    cursor: pointer;
+    box-shadow: inset 0 0 0 3px rgba(65, 62, 61, 0.582);
+    color: rgb(224, 209, 209);
     text-align: center;
     align-items: center;
     /* safari transition end event.propertyname*/
@@ -82,10 +86,17 @@ a{
 .panel p:nth-child(2){
     font-size: 2em;
 }
-
+.panel:hover {
+    box-shadow: inset 0 0 0 2px rgba(255, 2, 242, 0.747);
+}
 .panel.open {
-    flex: 3;
+    flex: 5;
     font-size: 4em;
+
+}
+.panel3.open, .panel2.open, .panel4.open, .panel5.open{
+    background-image: url(./imagenes/Login1.jpg);
+    box-shadow: inset 0 0 0 5px rgba(87, 240, 17, 0.664);
 }
 
 
