@@ -21,7 +21,7 @@ a{
 
 .panels{
     min-height: 100vh;
-    overflow: auto;
+    overflow: inherit;
     display: flex;
 }
 
@@ -76,16 +76,16 @@ a{
     text-transform: uppercase;
     font-family: 'Amatic SC', cursive;
     text-shadow:0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .panel p:nth-child(2){
-    font-size: 4em;
+    font-size: 2em;
 }
 
 .panel.open {
-    flex: 10;
-    font-size: 40px;
+    flex: 3;
+    font-size: 2em;
 }
 
 
