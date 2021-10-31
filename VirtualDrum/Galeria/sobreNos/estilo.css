@@ -1,0 +1,15 @@
+* {
+    background-attachment: fixed;
+    background-color: aquamarine;
+}
+
+.p {
+    font-size: large;
+}
+
+.cajita{
+    border: 2px solid black;
+    border-radius: 4px;
+    height: 50%;
+    width: 50%;
+}
